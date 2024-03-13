@@ -1,0 +1,17 @@
+{
+  "name": "web3js-v4-validator-int",
+  "private": true,
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.1",
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "web3": "^4.6.0"
+  }
+}
