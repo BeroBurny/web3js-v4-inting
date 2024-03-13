@@ -29,18 +29,6 @@ numbers.forEach((ether) => {
 });
 
 /**
- * Using BigInt as value
- */
-numbers.forEach((ether) => {
-  try {
-    utils.toWei(BigInt(ether), 'ether');
-    console.log('\x1b[32m', `[toWei] BigInt works with: ${ether}`);
-  } catch (e) {
-    console.log('\x1b[31m', `[toWei] BigInt failed with: ${ether}`);
-  }
-});
-
-/**
  * Using String as value
  */
 numbers.forEach((ether) => {
@@ -52,6 +40,8 @@ numbers.forEach((ether) => {
   }
 });
 
+console.log();
+console.log();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -60,8 +50,7 @@ numbers.forEach((ether) => {
 numbers.forEach((ether) => {
   try {
     const value = utils.toHex(utils.toWei(ether, 'ether'));
-    const transactionData = new eth.accounts.Transaction({ to, value });
-    transactionData.serialize();
+    new eth.accounts.Transaction({ to, value });
     console.log('\x1b[32m', `[Transaction] Hex works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] Hex failed with: ${ether}`);
@@ -74,8 +63,7 @@ numbers.forEach((ether) => {
 numbers.forEach((ether) => {
   try {
     const value = BigInt(utils.toWei(ether, 'ether'));
-    const transactionData = new eth.accounts.Transaction({ to, value });
-    transactionData.serialize();
+    new eth.accounts.Transaction({ to, value });
     console.log('\x1b[32m', `[Transaction] BigInt works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] BigInt failed with: ${ether}`);
@@ -88,8 +76,7 @@ numbers.forEach((ether) => {
 numbers.forEach((ether) => {
   try {
     const value = Number(utils.toWei(ether, 'ether'));
-    const transactionData = new eth.accounts.Transaction({ to, value });
-    transactionData.serialize();
+    new eth.accounts.Transaction({ to, value });
     console.log('\x1b[32m', `[Transaction] Number works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] Number failed with: ${ether}`);
@@ -102,8 +89,7 @@ numbers.forEach((ether) => {
 numbers.forEach((ether) => {
   try {
     const value = utils.toWei(ether, 'ether');
-    const transactionData = new eth.accounts.Transaction({ to, value });
-    transactionData.serialize();
+    new eth.accounts.Transaction({ to, value });
     console.log('\x1b[32m', `[Transaction] String works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] String failed with: ${ether}`);
