@@ -12,6 +12,8 @@ const numbers = [
   '0.00001',
   '0.000001',
   '0.0000001',
+  '0.00000001',
+  '0.000000001',
 ];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,6 +27,7 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[toWei] Number works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[toWei] Number failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
 
@@ -37,6 +40,7 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[toWei] String works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[toWei] String failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
 
@@ -54,6 +58,7 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[Transaction] Hex works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] Hex failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
 
@@ -67,6 +72,7 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[Transaction] BigInt works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] BigInt failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
 
@@ -80,6 +86,7 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[Transaction] Number works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] Number failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
 
@@ -93,5 +100,6 @@ numbers.forEach((ether) => {
     console.log('\x1b[32m', `[Transaction] String works with: ${ether}`);
   } catch (e) {
     console.log('\x1b[31m', `[Transaction] String failed with: ${ether}`);
+    if (e instanceof Error) console.log(' - ', (e as Error).message);
   }
 });
